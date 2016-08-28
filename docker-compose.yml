@@ -1,6 +1,11 @@
 server:
   image: node:6
-  command: npm start
+  command: npm run watch
   working_dir: /app/server
   volumes:
     - ./server:/app/server
+  environment:
+    PORT: 3000
+  ports:
+    - "3000:3000"
+    - "5858:5858"
